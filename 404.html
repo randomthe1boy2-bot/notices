@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page Not Found — notices.turbov.dev</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts: Inter for UI, JetBrains Mono for code/dates, Caveat for handwritten notes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stone: {
+                            850: '#1c1917',
+                            900: '#12100e',
+                            950: '#0c0a09',
+                        },
+                        amber: {
+                            450: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        hand: ['Caveat', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #12100e;
+            color: #d6d3d1;
+        }
+
+        /* Tactile background grid texture */
+        .grid-bg {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Toast Popup Animation */
+        .toast {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="min-h-screen grid-bg flex flex-col justify-between items-center px-4 py-8 sm:py-16 selection:bg-stone-700 selection:text-amber-200">
+
+    <main class="w-full max-w-2xl mx-auto space-y-8 my-auto">
+
+        <!-- Domain Branding & Header -->
+        <header class="flex items-center justify-between border-b border-stone-800 pb-5">
+            <a href="index.html" class="flex items-center gap-2 group text-stone-400 hover:text-stone-200 transition-colors">
+                <i class="fa-solid fa-arrow-left text-xs transition-transform group-hover:-translate-x-1"></i>
+                <span class="font-mono text-xs uppercase tracking-wider">notices.turbov.dev</span>
+            </a>
+            <div class="font-mono text-xs text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2.5 py-1 rounded-md flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                <span>Error 404</span>
+            </div>
+        </header>
+
+        <section class="bg-stone-900/90 border border-stone-800 rounded-xl p-6 sm:p-8 space-y-6 shadow-xl relative overflow-hidden text-center sm:text-left">
+            <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-stone-950 border border-stone-800 flex items-center justify-center text-amber-500 shrink-0 shadow-inner">
+                    <i class="fa-solid fa-compass-slash text-2xl sm:text-3xl"></i>
+                </div>
+                <div class="space-y-2">
+                    <span class="text-xs font-mono uppercase tracking-wider text-amber-400 font-medium">
+                        Notice Not Found
+                    </span>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-stone-100 tracking-tight">
+                        Looks like you've taken a wrong turn.
+                    </h1>
+                    <p class="text-stone-400 text-sm leading-relaxed">
+                        The page or notice you are looking for doesn't exist, might have been moved, or has reached its retention expiry date.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Handwritten Personal Note -->
+            <div class="pt-2 border-t border-stone-800/80 flex items-center justify-center sm:justify-start gap-2">
+                <span class="font-hand text-xl sm:text-2xl text-rose-400 rotate-[-1deg] block leading-none">
+                    ~ oops! double check the URL or jump back home <i class="fa-solid fa-ghost text-xs ml-1"></i>
+                </span>
+            </div>
+        </section>
+
+        <section class="space-y-3">
+            <h2 class="text-xs font-mono uppercase tracking-wider text-stone-400 font-semibold px-1">
+                Suggested Destinations
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- Homepage Option -->
+                <a href="index.html" class="group bg-stone-900 hover:bg-stone-850 border border-stone-800 hover:border-amber-500/40 p-4 rounded-xl transition-all flex items-center justify-between">
+                    <div class="space-y-1">
+                        <span class="block text-sm font-semibold text-stone-200 group-hover:text-amber-400 transition-colors">
+                            <i class="fa-solid fa-house text-xs mr-1.5 text-stone-400 group-hover:text-amber-400"></i> Notice Hub Homepage
+                        </span>
+                        <span class="block text-xs font-mono text-stone-500">View all active updates & notices</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-stone-600 group-hover:text-amber-400 group-hover:translate-x-1 transition-all"></i>
+                </a>
+
+                <!-- RemadeRec Announcement Option -->
+                <a href="remaderec.html" class="group bg-stone-900 hover:bg-stone-850 border border-stone-800 hover:border-rose-500/40 p-4 rounded-xl transition-all flex items-center justify-between">
+                    <div class="space-y-1">
+                        <span class="block text-sm font-semibold text-stone-200 group-hover:text-rose-400 transition-colors">
+                            <i class="fa-solid fa-robot text-xs mr-1.5 text-stone-400 group-hover:text-rose-400"></i> RemadeRec Notice
+                        </span>
+                        <span class="block text-xs font-mono text-stone-500">Read Discord bot EOL update</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-stone-600 group-hover:text-rose-400 group-hover:translate-x-1 transition-all"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="bg-stone-900/90 border border-stone-800 rounded-xl p-5 space-y-4">
+            <div class="space-y-1">
+                <h3 class="text-sm font-semibold text-stone-200 flex items-center gap-2">
+                    <i class="fa-regular fa-comments text-amber-500"></i> Need help finding something?
+                </h3>
+                <p class="text-xs text-stone-400">
+                    Feel free to reach out directly if you suspect a broken link or need assistance:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                <!-- Discord Tag Card -->
+                <div class="bg-stone-950 p-3 rounded-lg border border-stone-800 flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-7 h-7 rounded bg-stone-900 border border-stone-800 flex items-center justify-center text-indigo-400 text-xs">
+                            <i class="fa-brands fa-discord"></i>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] uppercase font-mono text-stone-500">Discord</span>
+                            <span class="text-xs font-mono font-medium text-stone-200">yaknow14</span>
+                        </div>
+                    </div>
+                    <button onclick="copyValue('yaknow14', 'Discord Username')" 
+                            class="px-2 py-1 rounded bg-stone-800 hover:bg-stone-700 text-[11px] font-mono text-stone-300 transition-colors flex items-center gap-1">
+                        <i class="fa-regular fa-copy text-stone-400"></i>
+                        <span>Copy</span>
+                    </button>
+                </div>
+
+                <!-- Email Card -->
+                <div class="bg-stone-950 p-3 rounded-lg border border-stone-800 flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-7 h-7 rounded bg-stone-900 border border-stone-800 flex items-center justify-center text-amber-400 text-xs">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] uppercase font-mono text-stone-500">Support Email</span>
+                            <a href="mailto:support@turbov.dev" class="text-xs font-mono font-medium text-stone-200 hover:underline">
+                                support@turbov.dev
+                            </a>
+                        </div>
+                    </div>
+                    <button onclick="copyValue('support@turbov.dev', 'Support Email')" 
+                            class="px-2 py-1 rounded bg-stone-800 hover:bg-stone-700 text-[11px] font-mono text-stone-300 transition-colors flex items-center gap-1">
+                        <i class="fa-regular fa-copy text-stone-400"></i>
+                        <span>Copy</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="w-full max-w-2xl mx-auto mt-8 pt-6 border-t border-stone-800/60 text-center text-xs text-stone-500 font-mono flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p>notices.turbov.dev &copy; TurboV Services</p>
+        <p class="text-stone-600">Maintained by Emma / The Courrpted</p>
+    </footer>
+
+    <!-- Minimal Toast Notification -->
+    <div id="toast" class="toast fixed bottom-6 right-6 z-50 bg-stone-800 border border-stone-700 text-stone-100 px-4 py-3 rounded-lg shadow-2xl flex items-center gap-3 text-xs font-mono">
+        <i class="fa-solid fa-check text-emerald-400"></i>
+        <span id="toast-text">Copied to clipboard</span>
+    </div>
+
+    <script>
+        function copyValue(text, label) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast(`${label} copied!`);
+            } catch (err) {
+                console.error('Failed to copy', err);
+            }
+            document.body.removeChild(textarea);
+        }
+
+        let toastTimer;
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-text').innerText = msg;
+            toast.classList.add('show');
+
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
